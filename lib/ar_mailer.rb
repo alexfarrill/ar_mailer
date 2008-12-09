@@ -9,7 +9,6 @@ module ARMailer
     # mixes in ActionMailer::ARMailer in ActionMailer::Base
     def enable_actionmailer
       return if ActionMailer::Base.instance_methods.include? 'perform_delivery_activerecord'
-      require 'action_mailer/ar_mailer'
       ActionMailer::Base.class_eval { include ActionMailer::ARMailer }
     end
   end
